@@ -1,0 +1,93 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that specifically to adjust the cart.html layout.
+*/
+
+body, html {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#cart-contents {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#cart-contents p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#cart-contents p:last-child {
+  border-bottom: none;
+}
+
+#total-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+#check-out {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#check-out:hover {
+  background-color: #367C39;
+}
+
+.back-to-products {
+  background-color: #ddd;
+  color: #333;
+}
+
+.back-to-products:hover {
+  background-color: #ccc;
+}
+
+#cart-contents img {
+  width: 150px;
+  height: 150px;
+  border: black solid 2px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

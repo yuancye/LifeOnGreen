@@ -1,0 +1,132 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that specifically to adjust the products.html layout.
+*/
+
+#filter-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#filter-form div {
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#products-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+#products, #products-list section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+#products-list section {
+  width: calc(20% - 16px);
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#products-list img, #single-item img {
+  width: 150px;
+  height: 150px;
+  border: black solid 2px;
+}
+
+#products-list p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.stars-outer {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.stars-outer:before {
+  content: '\2605\2605\2605\2605\2605';
+  color: #ddd;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.stars-inner:before {
+  content: '\2605\2605\2605\2605\2605';
+  color: #f8ce0b;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #367C39;
+}
+
+button:disabled {
+  background-color: #A5D6A7;
+  cursor: not-allowed;
+}
+
+button.back-to-products {
+  background-color: #f44336;
+}
+
+button.back-to-products:hover {
+  background-color: #d32f2f;
+}
+
+/* List view */
+#products-list.list-view {
+  display: block;
+}
+
+/* Layout toggle buttons */
+.layout-toggle {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.layout-toggle button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.layout-toggle button:hover {
+  background-color: #367C39;
+}

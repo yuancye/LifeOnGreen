@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is index.html of LifeOnGreen. This page will explain our
+  philosophy of the whole web application .
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Life on Green</title>
+    <link rel="icon" href="imgs/tree.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet">
+    <script src="./pages/navcontroller.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <section class="top-bar">
+        <section class="logo-container">
+          <a href="#home">
+            <img src="imgs/earth.png" alt="earth logo">
+          </a>
+        </section>
+        <section class="auth-control dropdown">
+          <a href="./pages/login/login.html" id="login-link">Login</a>
+          <div class="dropdown-content">
+            <a href="./pages/listingitem.html" class="usermenu hidden">List Item for Sale</a>
+            <a href="./pages/listeditems.html" class="usermenu hidden">View Listed Items</a>
+            <a href="./pages/transactions.html" class="usermenu hidden">View Transactions</a>
+          </div>
+          <a href="./pages/payment/cart.html">
+            <img id="cart-icon" src="../imgs/cart.png" alt="cart icon">
+            <span id='cart-count'>0</span>
+          </a>
+        </section>
+      </section>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/products.html">Products</a></li>
+          <li><a href="pages/activity.html">Activities</a></li>
+          <li><a href="pages/about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="video-header">
+        <video autoplay muted loop>
+          <source src="imgs/forest1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+          <h1>Welcome to Life on Green</h1>
+        </div>
+      </section>
+      <section class="intro">
+        <p>Welcome to Life on Green, your trusted partner in
+          embracing a sustainable lifestyle. Our mission is to
+          inspire and empower you to make eco-friendly choices that
+          benefit both you and our planet. Join us as we explore
+          innovative products and engaging activities designed to
+          create a greener, more vibrant future together.
+        </p>
+      </section>
+      <section class="eco-products">
+        <h1>Eco-Friendly Products</h1>
+        <div class="content">
+          <img src="imgs/homepage-product.jpg" alt="eco-friendly products">
+          <div class="text">
+            <p>Explore our wide range of eco-friendly products from
+              reusable kitchenware to organic skincare. Each
+              product is carefully selected to ensure it meets our
+              high standards for sustainability and quality. By
+              choosing our products, you're making a positive
+              impact on the planet.
+            </p>
+          </div>
+        </div>
+        <section class="link-container">
+          <a href="pages/products.html">Shop Now</a>
+        </section>
+      </section>
+
+      <section class="eco-activities">
+        <h1>Eco-Activities</h1>
+        <div class="content">
+          <img src="imgs/homepage-activity.jpg" alt="eco-friendly activities">
+          <div class="text">
+            <p>Join our community in engaging eco-friendly
+              activities that promote sustainability
+              and environmental awareness. From tree planting events
+              to clean-up drives, there's
+              something for everyone to get involved and make a
+              difference.
+            </p>
+          </div>
+        </div>
+        <section class="link-container">
+          <a href="pages/activity.html">Join Activities</a>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+    </footer>
+  </body>
+</html>

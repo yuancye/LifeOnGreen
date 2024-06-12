@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is login.html of LifeOnGreen. User can login to their
+  account if the username matches the stored schoool.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Life on Green</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/x-icon" href="../../imgs/favicon.ico" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet">
+    <script src="login.js"></script>
+  </head>
+
+  <body class="light-background">
+    <section class="login-container">
+      <h2>Login</h2>
+      <p class="error"></p>
+      <form>
+        <section class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </section>
+
+        <section class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </section>
+        <button type="submit">Login</button>
+        <section class="login-options">
+          <a href="passwordreset.html">Forgot Password?</a>
+          <a href="registration.html">Register</a>
+        </section>
+      </form>
+    </section>
+  </body>
+</html>

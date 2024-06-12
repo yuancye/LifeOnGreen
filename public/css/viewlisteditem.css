@@ -1,0 +1,44 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that used to adjust the layout of the listeditem.html.
+*/
+
+#listed-items-container {
+  max-width: 1200px; /* Adjusted to fit more items */
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#listed-items-container h1 {
+  text-align: center;
+  color: #2E8B57;
+  margin-bottom: 20px;
+}
+
+#listed-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}

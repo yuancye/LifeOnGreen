@@ -1,0 +1,110 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that specifically to adjust the listingitem.html layout.
+*/
+
+body, html {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form section {
+  margin-bottom: 20px;
+}
+
+form section div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"], input[type="file"], textarea, select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  background-color: #4CAF50;
+  color: white;
+}
+
+button:hover {
+  background-color: #367C39;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+a:hover {
+  color: #367C39;
+}
+
+footer {
+  background-color: #D3D3D3;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+footer .footer-content a {
+  text-decoration: none;
+  color: #36454F;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+
+  input[type="text"], input[type="number"], input[type="file"], textarea, select {
+    width: calc(100% - 10px);
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 5px 0;
+  }
+}

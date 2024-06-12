@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is checkout.html to let user to input their payment
+  information and save the transaction if success.
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../css/checkout.css">
+    <link rel="icon" href="../../imgs/tree.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet">
+    <script src="checkout.js"></script>
+    <script src="../navcontroller.js"></script>
+    <title>Life On Green</title>
+  </head>
+  <body>
+    <header>
+      <section class="top-bar">
+        <section class="logo-container">
+          <a href="#home">
+            <img src="../../imgs/earth.png" alt="earth logo">
+          </a>
+        </section>
+
+        <section class="auth-control dropdown">
+          <a href="../pages/login/login.html" id="login-link">Login</a>
+          <div class="dropdown-content">
+            <a href="../listingitem.html" class="usermenu hidden">List Item for Sale</a>
+            <a href="../listeditems.html" class="usermenu hidden">View Listed Items</a>
+            <a href="../transactions.html" class="usermenu hidden">View Transactions</a>
+          </div>
+          <a href="cart.html">
+            <img id="cart-icon" src="../../imgs/cart.png" alt="cart icon">
+            <span id='cart-count'>0</span>
+          </a>
+        </section>
+      </section>
+
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../activity.html">Activities</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p class="error"></p>
+      <form id="checkout-form">
+        <article id="mailing-address">
+          <div>
+            <p>Mailing Address</p>
+            <label><input name="mailing-address" id="mailing-address1" type="checkbox">
+              Same as the current address
+            </label>
+          </div>
+          <div>
+            <label for="street">Street</label>
+            <input name="street" id="street" type="text">
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input name="state" id="state" type="text">
+            <label for="zip">ZIP</label>
+            <input name="zip" id="zip" type="number" min="10000" max="99999">
+          </div>
+        </article>
+        <article id="payment-info">
+          <div>
+            <span>Payment method</span>
+            <label>
+              <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+            </label>
+            <label>
+              <input type="radio" name="payment-method" value="debit-card"> Debit Card
+            </label>
+            <label>
+              <input type="radio" name="payment-method" value="master-card"> Master Card
+            </label>
+          </div>
+          <div>
+            <label for="card-number">Card Number</label>
+            <input name="card-number" id="card-number" type="text" pattern="[0-9]{13,16}" required>
+          </div>
+          <div>
+            <label for="expiration-date">Experiation Date</label>
+            <input name="expiration-date" id="expiration-date" type="text"
+            placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
+          </div>
+          <div>
+            <label for="card-holder-name">Card holder's name</label>
+            <input type="text" id="card-holder-name" name="card-holder-name" required>
+          </div>
+          <div>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" pattern="[0-9]{3,4}" required>
+          </div>
+        </article>
+        <article id="billing-address">
+          <div>
+            <p>Billing Address</p>
+            <label><input name="billing-address" id="billing-address1" type="checkbox">
+              Same as Above
+            </label>
+          </div>
+          <div>
+            <label for="street">Street</label>
+            <input name="street" id="street1" type="text">
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input name="state" id="state1" type="text">
+            <label for="zip">ZIP</label>
+            <input name="zip" id="zip1" type="number" min="10000" max="99999">
+          </div>
+        </article>
+        <button id="place-order">Place Order</button>
+      </form>
+      <button class="back-to-products hidden">Back To Products</button>
+      <button class="back-to-cart hidden">Back To Cart</button>
+    </main>
+  </body>
+</html>

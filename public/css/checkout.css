@@ -1,0 +1,129 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that specifically to adjust the checkout.html layout.
+*/
+
+body, html {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#product-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#product-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.product-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.product-item p {
+  margin: 5px 0;
+}
+
+#total-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+article div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+}
+
+#place-order {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#place-order:hover {
+  background-color: #367C39;
+}
+
+.back-to-products, .back-to-cart {
+  background-color: #ddd;
+  color: #333;
+}
+
+.back-to-products:hover, .back-to-cart:hover {
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+
+  input[type="text"], input[type="number"] {
+    width: calc(100% - 10px);
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,677 @@
+/* Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is the css stylesheet that specifically used to adjust the overall layout of Life on
+  Green web app.
+*/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+}
+
+header {
+  width: 100%;
+  background-color: #4CAF50;
+}
+
+.top-bar {
+  color: white;
+  padding: 1px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 40px;
+  height: auto;
+}
+
+.auth-control a, .auth-control a:hover {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block;
+}
+
+#cart-icon {
+  width: 32px;
+  height: auto;
+}
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #367C39;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #C9E7CA;
+}
+
+.search-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  border: none;
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-container button:hover {
+  background-color: #367C39;
+  color: white;
+}
+
+.philosophy {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy h1 {
+  font-family: 'Helvetica Neue', "Helvetica", "Arial", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: #2E8B57;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.philosophy h1:hover {
+  color: #367C39; /* Darker shade on hover to add interactivity */
+}
+
+.philosophy p {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.philosophy ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.philosophy li {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.philosophy h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.philosophy li p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.philosophy a {
+  color: #4CAF50;
+  text-decoration: none;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.philosophy a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4CAF50;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.philosophy a:hover {
+  color: #367C39;
+}
+
+.philosophy a:hover:after {
+  visibility: visible;
+  width: 100%;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: right;
+  padding: 10px 0;
+}
+
+/* smaller devices */
+
+@media (max-width: 768px) {
+  .philosophy {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .philosophy h1 {
+    font-size: 20px;
+  }
+
+  .philosophy p, .philosophy li p {
+    font-size: 14px;
+  }
+
+  .philosophy h2 {
+    font-size: 16px;
+  }
+}
+
+.philosophy img {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+}
+
+footer {
+  background-color: #D3D3D3;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #36454F;
+}
+
+.light-background {
+  background-color: #EAFFE1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-background .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.light-background label {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.light-background input[type="text"],
+.light-background input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.light-background button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.light-background button:hover {
+  background-color: #367C39;
+}
+
+.login-options {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-options a {
+  color: #4CAF50;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.login-options a:hover {
+  color: #367C39;
+}
+
+.about-main {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.about-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #2E8B57;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.philosophy-text {
+  width: 50%;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .content-left, .about-section .content-right {
+  width: 45%;
+}
+
+.about-section img {
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-section li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-section .content-left,
+  .about-section .content-right,
+  .about-section img {
+    width: 100%;
+  }
+
+  .philosophy {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .philosophy img {
+    width: 80%;
+    margin: 0 0 20px 0;
+  }
+
+  .philosophy-text {
+    width: 100%;
+  }
+}
+
+.video-header {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.video-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.video-header .overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.activity-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.activity-section h1 {
+  font-size: 2.5rem;
+  color: #2E8B57;
+  margin-bottom: 40px;
+}
+
+.activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.activity-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(30% - 0px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.activity-card img {
+  width: 100%;
+  height: auto;
+}
+
+.activity-info {
+  padding: 20px;
+}
+
+.activity-info h2 {
+  font-size: 1.75rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.activity-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.activity-info button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activity-info button:hover {
+  background-color: #367C39;
+}
+
+@media (max-width: 768px) {
+  .activity-card {
+    width: 100%;
+  }
+}
+
+.eco-products, .eco-activities {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.eco-products .content, .eco-activities .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.eco-products img, .eco-activities img {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.eco-products .text, .eco-activities .text {
+  width: 60%;
+}
+
+.eco-products h1, .eco-activities h1 {
+  color: #2E7D32;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.eco-products p, .eco-activities p {
+  color: #555;
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.link-container a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2E7D32;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.link-container a:hover {
+  background-color: #1B5E20;
+}
+
+.intro {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.intro p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* for message or error */
+.error {
+  color: rgb(239, 2, 2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.list-view .item {
+  display: block;
+  width: 100%;
+}
+
+input {
+  outline: #36454F solid 1px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.grid-view .item {
+  display: inline-block;
+  width: calc(33.33% - 10px);
+  margin: 5px;
+}
+
+/* drop down menu for user logged in */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.dropdown-content a:visited {
+  color: black;
+}
+
+#cart-count {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+.error-message {
+  color: red;
+}

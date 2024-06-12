@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is registration.html of LifeOnGreen. This page will allow
+  new customer to register an account.
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet">
+    <script src="registration.js"></script>
+    <title>Life On Green</title>
+  </head>
+  <body>
+    <main class="light-background">
+      <section class="login-container">
+        <h2>register</h2>
+        <p class="error"></p>
+        <form id="registration-form">
+          <section>
+            <label for="first-name">First Name</label>
+            <input name="first-name" id="first-name" type="text" required>
+          </section>
+          <section>
+            <label for="last-name">Last Name</label>
+            <input name="last-name" id="last-name" type="text" required>
+          </section>
+          <section>
+            <label for="email">Email</label>
+            <input name="email" id="email" type="email" required>
+          </section>
+          <section>
+            <label for="username">Username</label>
+            <input name="username" id="username" type="text" required>
+          </section>
+          <section>
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" required>
+          </section>
+          <section>
+            <label for="password-confirmation">Password Confirmation</label>
+            <input name="password-confirmation" id="password-confirmation" type="password" required>
+          </section>
+          <section>
+            <label for="street">Street</label>
+            <input name="street" id="street" type="text">
+          </section>
+          <section>
+            <label for="state">State</label>
+            <input name="state" id="state" type="text">
+            <label for="zip">ZIP</label>
+            <input name="zip" id="zip" type="number" min="10000" max="99999">
+          </section>
+        </form>
+        <section class="login-options">
+          <button id="register-btn">Create your account</button>
+          <a href="login.html">Back to Log in</a>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

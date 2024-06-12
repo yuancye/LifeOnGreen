@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is activity.html where it lists all the activities that are
+  available and user can sign in to any of the activities.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Life on Green</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../imgs/tree.ico" type="image/x-icon">
+    <script src="activity.js" defer></script>
+    <script src="navcontroller.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <section class="top-bar">
+        <section class="logo-container">
+          <a href="#home">
+            <img src="../imgs/earth.png" alt="earth logo">
+          </a>
+        </section>
+
+        <section class="auth-control dropdown">
+          <a href="./login/login.html" id="login-link">Login</a>
+          <div class="dropdown-content">
+            <a href="listingitem.html" class="usermenu hidden">List Item for Sale</a>
+            <a href="listeditems.html" class="usermenu hidden">View Listed Items</a>
+            <a href="transactions.html" class="usermenu hidden">View Transactions</a>
+          </div>
+          <a href="../pages/payment/cart.html">
+            <img id="cart-icon" src="../imgs/cart.png" alt="cart icon">
+            <span id='cart-count'>0</span>
+          </a>
+        </section>
+      </section>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="activity.html">Activities</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p class="error"></p>
+      <section class="activity-section">
+        <h1>Upcoming Activities</h1>
+        <div class="activities-container">
+          <div class="activity-card">
+            <img src="../imgs/beach-cleanup.jpg" alt="Beach Cleanup">
+            <div class="activity-info">
+              <h2>Beach Cleanup</h2>
+              <p>Join us for a beach cleanup to help preserve our
+                beautiful shoreline. All necessary equipment will
+                be provided.</p>
+              <button data-activity="Beach Cleanup">Sign Up</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <img src="../imgs/tree-plant.jpg" alt="Tree Planting">
+            <div class="activity-info">
+              <h2>Tree Planting</h2>
+              <p>Help us plant trees in the local park. This
+                activity is suitable for all ages and a great way
+                to contribute to a greener planet.</p>
+              <button data-activity="Tree Planting">Sign Up</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <img src="../imgs/community-garden.jpg" alt="Community Garden">
+            <div class="activity-info">
+              <h2>Community Garden</h2>
+              <p>Assist in planting and maintaining a community
+                garden. Enjoy the benefits of fresh produce and a
+                greener environment.</p>
+              <button data-activity="Community Garden">Sign Up</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <img src="../imgs/river-cleanup.jpg" alt="River Cleanup">
+            <div class="activity-info">
+              <h2>River Cleanup</h2>
+              <p>Join us in cleaning up the river to protect
+                wildlife and improve water quality. Gloves and
+                bags will be provided.</p>
+              <button data-activity="River Cleanup">Sign Up</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <img src="../imgs/wildlife.jpg" alt="Wildlife Preservation">
+            <div class="activity-info">
+              <h2>Wildlife Preservation</h2>
+              <p>Participate in activities to protect and preserve
+                local wildlife habitats. This includes building
+                birdhouses and monitoring species.</p>
+              <button data-activity="Wildlife Preservation">Sign Up</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <img src="../imgs/eco-workshop.jpg" alt="Eco Workshops">
+            <div class="activity-info">
+              <h2>Eco Workshops</h2>
+              <p>Join our eco workshops to learn about sustainable
+                practices such as composting, recycling, and
+                creating eco-friendly products.</p>
+              <button data-activity="Eco Workshops">Sign Up</button>
+            </div>
+          </div>
+        </div>
+        <p class="error-message"></p>
+      </section>
+    </main>
+  </body>
+</html>

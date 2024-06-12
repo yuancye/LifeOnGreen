@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  Name: Hung-Yun Liu | Yuanchao Ye
+  Date: 05-04-2024
+  Section: AG/Marina Wooden | AA/Kevin Wu
+
+  This is html for user to view the item that they have listed so far.
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/viewlisteditem.css">
+    <link rel="icon" href="../imgs/tree.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+    rel="stylesheet">
+    <script src="viewlisteditem.js"></script>
+    <script src="navcontroller.js"></script>
+    <title>Life On Green</title>
+  </head>
+  <body>
+    <header>
+      <section class="top-bar">
+        <section class="logo-container">
+          <a href="#home">
+            <img src="../imgs/earth.png" alt="earth logo">
+          </a>
+        </section>
+        <section class="auth-control dropdown">
+          <a href="./login/login.html" id="login-link">Login</a>
+          <div class="dropdown-content">
+            <a href="listingitem.html" class="usermenu hidden">List Item for Sale</a>
+            <a href="listeditems.html" class="usermenu hidden">View Listed Items</a>
+            <a href="transactions.html" class="usermenu hidden">View Transactions</a>
+          </div>
+          <a href="../pages/payment/cart.html">
+            <img id="cart-icon" src="../imgs/cart.png" alt="cart icon">
+            <span id='cart-count'>0</span>
+          </a>
+        </section>
+      </section>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="activity.html">Activites</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="listed-items-container">
+        <h1>My Listed Items</h1>
+        <div id="listed-items">
+        </div>
+        <p class="error"></p>
+      </section>
+      <a href="products.html">Go to Products</a>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+    </footer>
+  </body>
+</html>
