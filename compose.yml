@@ -1,0 +1,15 @@
+version: '1'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app #This means that any changes you make in your local directory will reflect directly inside the container, and vice versa.
+      - /app/node_modules
+#This maps the node_modules directory inside the container to an anonymous volume.
+#Without this mapping, the node_modules folder inside the container would be overwritten by your local node_modules folder (which is not ideal because dependencies inside node_modules are platform-specific). This causes issues with dependency compatibility, especially when working with Docker containers that may use a different OS (like Alpine Linux in your case).
+#By explicitly defining /app/node_modules, Docker ensures that the node_modules inside the container are not overwritten by your local node_modules (which could be different depending on your OS and architecture).
+
+    environment:
+      DB_PATH: /app/fp.db

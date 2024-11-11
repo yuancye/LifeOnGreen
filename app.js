@@ -814,10 +814,15 @@ async function fetchPrice(db, itemIds) {
  * @returns {Object} - The database object for the connection.
  */
 async function getDBConnection() {
+  const dbPath = process.env.DB_PATH || 'fp.db';  // Default to 'fp.db' if DB_PATH isn't set
   const db = await sqlite.open({
-    filename: 'fp.db',
+    filename: dbPath,
     driver: sqlite3.Database
   });
+  // const db = await sqlite.open({
+  //   filename: 'fp.db',
+  //   driver: sqlite3.Database
+  // });
   return db;
 }
 
