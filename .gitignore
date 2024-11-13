@@ -1,3 +1,11 @@
-node_modules/
+
 .*
-!/.gitignore
+node_modules/
+.git/
+.DS_Store
+.gitignore
+APIDOC.md
+item.csv
+LICENSE
+table.sql
+npm-debug.log
