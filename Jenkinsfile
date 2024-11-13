@@ -85,13 +85,29 @@
 //     }
 // }
 
-
 pipeline {
-    agent { dockerfile true }
+    agent any
     stages {
-        stage('Test') {
+        stage('Checkout Code') {
             steps {
-                sh 'node --version'
+                git 'https://github.com/username/project-repo.git'
+            }
+        }
+        stage('Build Image') {
+            steps {
+                script {
+                    sh 'docker build -t project-name:latest .'
+                }
+            }
+        }
+        stage('Run Container') {
+            steps {
+                script {
+                    // Stop and remove any running container with the same name
+                    sh 'docker stop project-container || true && docker rm project-container || true'
+                    // Run the new container
+                    sh 'docker run -d -p 3000:3000 --name project-container project-name:latest'
+                }
             }
         }
     }
