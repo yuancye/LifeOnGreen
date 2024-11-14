@@ -177,6 +177,12 @@ pipeline {
             }
 
         }
+        stage('Check Docker') {
+            steps {
+                sh 'docker --version'
+            }
+        }
+
         stage("build image") {
             steps {
                 sh 'docker build -t life-on-green:1.0 . '
