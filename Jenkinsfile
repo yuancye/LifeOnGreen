@@ -1,25 +1,40 @@
 pipeline {
     agent any
+
     environment {
-        // Set NodeJS version (assuming it's installed through Jenkins NodeJS Plugin)
-        NODE_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-        PATH = "${NODE_HOME}/bin:${env.PATH}"
+        // Set up any necessary environment variables (optional)
+        PATH = "/usr/local/bin:$PATH"
     }
+
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/yuancye/LifeOnGreen.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git credentialsId: 'c812990a-cdd7-4e7a-8acf-0fe5f780442d', url: 'git@github.com:yuancye/LifeOnGreen.git', branch: 'main'
+        //     }
+        // }
+        
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Run Application') {
+
+        stage('Start Application') {
             steps {
-                sh 'npm start'
+                sh 'nohup npm start &'
             }
+        }
+        // stage('Cleanup') {
+        //     steps {
+        //         sh 'pkill -f "node"'
+        //     }
+        // }
+    }
+
+    post {
+        always {
+            // Cleanup steps or notifications (if needed)
+            echo 'Pipeline completed.'
         }
     }
 }
