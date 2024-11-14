@@ -159,18 +159,28 @@
 pipeline {
     agent any
     stages {
-        stage("checkout") {
+        // stage("checkout") {
+        //     steps {
+        //         check scm
+        //     }
+        // }
+
+        // stage("build") {
+        //     steps {
+        //         sh 'sudo apt install npm'
+        //         sh 'sudo npm start'
+        //     }
+        // }
+        stage('check connection'){
+            steps{
+                echo "link to git hub Jenkinsfile"
+            }
+
+        }
+        stage("build image") {
             steps {
-                check scm
+                sh 'docker build -t life-on-green:1.0 . '
             }
         }
-
-        stage("build") {
-            steps {
-                sh 'sudo apt install npm'
-                sh 'sudo npm start'
-            }
-        }
-
     }
 }
