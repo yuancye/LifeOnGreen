@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     environment {
-        // Set up any necessary environment variables (optional)
         PATH = "/usr/local/bin:$PATH"
     }
 
     stages {
-        stage('Debugging') {
-            steps {
-                echo 'Debug: Pipeline is running this stage'
-            }
-        }
-        
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -21,15 +14,21 @@ pipeline {
 
         stage('Start Application') {
             steps {
-                // sh 'nohup npm start &'
-                sh 'npm start'
+                // Run the application in the background to allow the pipeline to continue
+                sh 'nohup npm start &'
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                // Ensure cleanup runs to stop the application
+                sh 'pkill -f "node"'
             }
         }
     }
 
     post {
         always {
-            // Cleanup steps or notifications (if needed)
             echo 'Pipeline completed.'
         }
     }
