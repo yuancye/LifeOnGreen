@@ -7,11 +7,11 @@ pipeline {
     }
 
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         git credentialsId: 'c812990a-cdd7-4e7a-8acf-0fe5f780442d', url: 'git@github.com:yuancye/LifeOnGreen.git', branch: 'main'
-        //     }
-        // }
+        stage('Debugging') {
+            steps {
+                echo 'Debug: Pipeline is running this stage'
+            }
+        }
         
         stage('Install Dependencies') {
             steps {
@@ -25,11 +25,6 @@ pipeline {
                 sh 'npm start'
             }
         }
-        // stage('Cleanup') {
-        //     steps {
-        //         sh 'pkill -f "node"'
-        //     }
-        // }
     }
 
     post {
