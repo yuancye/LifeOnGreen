@@ -85,30 +85,92 @@
 //     }
 // }
 
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Checkout Code') {
+//             steps {
+//                 git 'https://github.com/username/project-repo.git'
+//             }
+//         }
+//         stage('Build Image') {
+//             steps {
+//                 script {
+//                     sh 'docker build -t project-name:latest .'
+//                 }
+//             }
+//         }
+//         stage('Run Container') {
+//             steps {
+//                 script {
+//                     // Stop and remove any running container with the same name
+//                     sh 'docker stop project-container || true && docker rm project-container || true'
+//                     // Run the new container
+//                     sh 'docker run -d -p 3000:3000 --name project-container project-name:latest'
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Setup') {
+//             steps {
+//                 script {
+//                     sh 'npm install'
+//                     sh 'nohup npm start &'
+                    
+//                     def appPid = sh(script: 'echo $!', returnStdout: true).trim()
+//                     echo "App PID: ${appPid}"
+//                 }
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 script {
+//                     // Poll or wait until a certain condition is met (like test completion)
+//                     def testComplete = false
+                    
+//                     while (!testComplete) {
+//                         // Check if testing is done or a certain condition is met
+//                         testComplete = checkIfTestsAreComplete()
+                        
+//                         if (!testComplete) {
+//                             sleep(time: 10, unit: 'SECONDS')  // Wait for 10 seconds before checking again
+//                         }
+//                     }
+                    
+//                     // Once tests are done, stop the app
+//                     sh "kill ${appPid}"
+//                     echo "App stopped after testing completion"
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// def checkIfTestsAreComplete() {
+//     // Implement logic to check if testing or app activity is complete
+//     return true  // For example purposes, returning true to stop the app
+// }
+
 pipeline {
     agent any
     stages {
-        stage('Checkout Code') {
+        stage("checkout") {
             steps {
-                git 'https://github.com/username/project-repo.git'
+                check scm
             }
         }
-        stage('Build Image') {
+
+        stage("build") {
             steps {
-                script {
-                    sh 'docker build -t project-name:latest .'
-                }
+                sh 'sudo apt install npm'
+                sh 'sudo npm start'
             }
         }
-        stage('Run Container') {
-            steps {
-                script {
-                    // Stop and remove any running container with the same name
-                    sh 'docker stop project-container || true && docker rm project-container || true'
-                    // Run the new container
-                    sh 'docker run -d -p 3000:3000 --name project-container project-name:latest'
-                }
-            }
-        }
+
     }
 }
