@@ -171,6 +171,10 @@ pipeline {
         //         sh 'sudo npm start'
         //     }
         // }
+        environment {
+        // Append /usr/local/bin to the existing PATH, rather than replacing it
+            PATH = "/usr/local/bin:$PATH"
+        }
         stage('check connection'){
             steps{
                 echo "link to git hub Jenkinsfile"
