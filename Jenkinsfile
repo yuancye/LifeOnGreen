@@ -21,7 +21,8 @@ pipeline {
 
         stage('Start Application') {
             steps {
-                sh 'nohup npm start &'
+                // sh 'nohup npm start &'
+                sh 'npm start'
             }
         }
         // stage('Cleanup') {
