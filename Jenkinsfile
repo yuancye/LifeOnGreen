@@ -158,23 +158,11 @@
 
 pipeline {
     agent any
+    environment {
+        PATH = "/usr/local/bin:$PATH"
+    }
     stages {
-        // stage("checkout") {
-        //     steps {
-        //         check scm
-        //     }
-        // }
 
-        // stage("build") {
-        //     steps {
-        //         sh 'sudo apt install npm'
-        //         sh 'sudo npm start'
-        //     }
-        // }
-        environment {
-        // Append /usr/local/bin to the existing PATH, rather than replacing it
-            PATH = "/usr/local/bin:$PATH"
-        }
         stage('check connection'){
             steps{
                 echo "link to git hub Jenkinsfile"
