@@ -69,15 +69,24 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        // stage('Build Docker Image') {
+        //     steps {
+        //         script {
+        //             // Build the Docker image
+        //             sh 'docker build -t life-on-green .'
+        //         }
+        //     }
+        // }
+
+        // pull images from Dockerhub
+        stage('Pull Docker Image from Docker Hub') {
             steps {
                 script {
-                    // Build the Docker image
-                    sh 'docker build -t life-on-green .'
+                    // Pull the Docker image from Docker Hub
+                    sh 'docker pull yuanchaoye/life-on-earth:1.0'
                 }
             }
         }
-
         stage('Run Docker Container') {
             steps {
                 script {
