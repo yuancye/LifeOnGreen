@@ -92,7 +92,7 @@ pipeline {
                 script {
                     // Run the Docker container
                     sh 'docker run -d -p 8000:8000 --name web-app yuanchaoye/life-on-green:1.0'
-                    sh 'sleep 60'
+                    sh 'sleep 120'
                 }
             }
         }
