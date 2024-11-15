@@ -38,10 +38,10 @@
 pipeline {
     agent any
 
-    // environment {
-    //     // Set up any necessary environment variables (optional)
-    //     PATH = "/usr/local/bin:$PATH"
-    // }
+    environment {
+        // Set up any necessary environment variables (optional)
+        PATH = "/usr/local/bin:$PATH"
+    }
 
     stages {
         stage('Cleanup Existing Container and Image') {
