@@ -83,6 +83,7 @@ pipeline {
                 script {
                     // Run the Docker container
                     sh 'docker run -d -p 8000:8000 --name web-app life-on-green'
+                    sh 'sleep 60'
                 }
             }
         }
@@ -93,7 +94,10 @@ pipeline {
             script {
                 sh '''
                     docker stop web-app || true
-                    docker rm life-on-green || true
+                    docker rm web-app || true
+                '''
+                sh '''
+                    docker rmi life-on-green || true
                 '''
             }
             echo 'Pipeline completed.'
