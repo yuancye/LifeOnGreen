@@ -57,12 +57,12 @@ pipeline {
 
                     // Check if the image exists and remove it
                     sh '''
-                        if [ $(docker images -q life-on-green) ]; then
-                            if [ $(docker ps -aq -f ancestor=life-on-green) ]; then
-                                docker stop $(docker ps -aq -f ancestor=life-on-green) || true
-                                docker rm $(docker ps -aq -f ancestor=life-on-green) || true
+                        if [ $(docker images -q life-on-earth) ]; then
+                            if [ $(docker ps -aq -f ancestor=life-on-earth) ]; then
+                                docker stop $(docker ps -aq -f ancestor=life-on-earth) || true
+                                docker rm $(docker ps -aq -f ancestor=life-on-earth) || true
                             fi
-                            docker rmi life-on-green || true
+                            docker rmi life-on-earth || true
                         fi
                     '''
                 }
@@ -83,7 +83,7 @@ pipeline {
             steps {
                 script {
                     // Pull the Docker image from Docker Hub
-                    sh 'docker pull yuanchaoye/life-on-earth:1.0'
+                    sh 'docker pull yuanchaoye/life-on-earth:1.0.'
                 }
             }
         }
@@ -91,7 +91,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -d -p 8000:8000 --name web-app life-on-green'
+                    sh 'docker run -d -p 8000:8000 --name web-app life-on-earth'
                     sh 'sleep 60'
                 }
             }
@@ -106,7 +106,7 @@ pipeline {
                     docker rm web-app || true
                 '''
                 sh '''
-                    docker rmi life-on-green || true
+                    docker rmi life-on-earth || true
                 '''
             }
             echo 'Pipeline completed.'
