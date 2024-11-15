@@ -44,6 +44,31 @@ pipeline {
     }
 
     stages {
+        stage('Cleanup Existing Container and Image') {
+            steps {
+                script {
+                    // Check if the container exists and remove it
+                    sh '''
+                        if [ $(docker ps -aq -f name=web-app) ]; then
+                            docker stop web-app || true
+                            docker rm web-app || true
+                        fi
+                    '''
+
+                    // Check if the image exists and remove it
+                    sh '''
+                        if [ $(docker images -q life-on-green) ]; then
+                            if [ $(docker ps -aq -f ancestor=life-on-green) ]; then
+                                docker stop $(docker ps -aq -f ancestor=life-on-green) || true
+                                docker rm $(docker ps -aq -f ancestor=life-on-green) || true
+                            fi
+                            docker rmi life-on-green || true
+                        fi
+                    '''
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
@@ -65,7 +90,6 @@ pipeline {
 
     post {
         always {
-            // Stop and remove the container after the pipeline run
             script {
                 sh '''
                     docker stop web-app || true
